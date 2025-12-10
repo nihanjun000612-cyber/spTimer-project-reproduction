@@ -54,6 +54,6 @@ RSE increased by ~1.4%.
 R² remained nearly unchanged.
 Even when overall correlation behavior looks similar, correct model specification is crucial for improving predictive accuracy and model stability.
 6. Documents
-final paper.pdf original paper
+Bayesian Spatio-Temporal Modeling Using spTimer A Reproduction and Extension Study.docx/ original paper.pdf
 7. Experimental Scripts (Development History)
 Includes earlier or incomplete versions used during the development process.
