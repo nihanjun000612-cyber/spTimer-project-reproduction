@@ -1,4 +1,0 @@
-"SNR","Noise_Variance","Goodness_of_Fit","Penalty","PMCC","Computation_Time_Sec","PMCC_Improvement"
-1,1,1403.39,2732.49,4135.88,0.14,NA
-10,0.1,664.16,1016.29,1680.45,0.17,59.4
-15,0.067,636.12,950.62,1586.74,0.1,5.6
