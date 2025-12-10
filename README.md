@@ -16,7 +16,9 @@ Written report
 Code repository with reproducibility
 Final presentation slides
 Substantial computational components
+
 2. Extensions Introduced in This Project
+
 In addition to reproducing the original simulation study, three computational extensions were conducted:
 Extension 1 — Sampling Design (Grid vs Random)
 We study how irregular spatial sampling affects prediction accuracy compared with regular grid sampling.
@@ -31,20 +33,30 @@ We simulate data from a nonseparable Gneiting kernel but fit a separable GP mode
 Results show ≈5.5% loss in MAE
 Coverage rates decline under misspecification
 Demonstrates the importance of correctly capturing space–time interaction
-4. How to Run the Analysis (you should change the address off source to your address)
+
+3. How to Run the Analysis (you should change the address off source to your address)
 1 data_simulation2 final.R
+
 2 model_fitting2 final.R
+
 3.nonseparable_cov3 final.R
+
 4.covariance test2 final.R
+
 5 grid_vs_random final.R
+
 6 model_comparison2 final.R
+
 7.Nonseparable Test with Robust Prediction Extraction2 final.R
+
 8 original code from the paper and based on that I revised part of the code.R
-5. Reproduction Results (Summary)
+
+4. Reproduction Results (Summary)
 AR model performs worst across MAE/RMSE
 GP achieves the best accuracy on small grids
 GPP scales to 55×55 while retaining reasonable accuracy
-6. Extension Experiment Results (Summary) 
+
+5. Extension Experiment Results (Summary) 
 The study compared two spatial sampling designs and two types of space–time correlation models.
 A regular lattice provides full spatial coverage and near‑optimal spacing for Gaussian process interpolation on smooth fields.
 A random sampling plan mimics realistic monitoring situations with clustered, irregular spacing.
@@ -54,7 +66,9 @@ MAE increased by about 5.5% (statistically significant).
 RSE increased by about 1.4%.
 R² remained nearly unchanged.
 Overall, the results indicate that even similar overall correlation behavior can lead to different predictive accuracy, and the precise model specification substantially affects prediction reliability.
-7. Documents
+
+6. Documents
 final paper
-8. Experimental Scripts (Development History)
+
+7. Experimental Scripts (Development History)
 These files include the ones that I failed to achieve the successful outcome.
