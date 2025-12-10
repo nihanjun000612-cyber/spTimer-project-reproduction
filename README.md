@@ -57,12 +57,4 @@ Overall, the results indicate that even similar overall correlation behavior can
 7. Documents
 final paper
 8. Experimental Scripts (Development History)
-These files include the ones that I failed to achieve the successful outcomes
-
-
-
-
-
-
-
-3.
+These files include the ones that I failed to achieve the successful outcome.
