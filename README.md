@@ -1,8 +1,6 @@
 STAT 5430 Final Project — Bayesian Spatio-Temporal Modeling Using spTimer
-
 1. Overview
-This project reproduces and extends the core simulation study from Bakar & Sahu (2015), focusing on Bayesian spatio‑temporal modeling using the spTimer R package.
-
+   This project reproduces and extends the core simulation study from Bakar & Sahu (2015), focusing on Bayesian spatio‑temporal modeling using the spTimer R package.
 Original Models Compared
 GP — Gaussian Process spatio‑temporal model
 AR — First‑order autoregressive temporal model
@@ -13,7 +11,6 @@ Full model refitting using spTimer (GP, AR, GPP)
 Detailed performance comparisons (MAE, RMSE, R², coverage)
 Three computational extensions beyond the original paper
 This repository satisfies the full requirements for the STAT 5430 Final Project:
-
 Written report
 Reproducible code repository
 Final presentation slides
@@ -31,10 +28,8 @@ AR model is most sensitive to SNR, while GPP remains more stable.
 Extension 3 — Covariance Misspecification (Separable vs Nonseparable)
 Simulates data from a nonseparable Gneiting kernel but fits a separable GP model.
 Results show ≈5.5% loss in MAE and a small 1.4% increase in RSE.
-
 3. How to Run the Analysis
 (Change file paths to your local environment before running.)
-
 1.data simulation2 final
 2.model fitting2 final.R
 3.nonseparable cov3 final.R
@@ -43,31 +38,22 @@ Results show ≈5.5% loss in MAE and a small 1.4% increase in RSE.
 6.Nonseparable Test with Robust Prediction Extraction2 final.R
 7.Nonseparable_Test_with_Robust_Prediction_Extraction2_final.R
 8.original code from paper revised.R
-
 4. Reproduction Results (Summary)
 Model	Performance Summary
 AR	Performs worst across MAE/RMSE
 GP	Best accuracy on smaller grids
 GPP	Scales to 55×55 while retaining reasonable accuracy
-
 5. Extension Experiment Results (Summary)
 Two spatial sampling designs: regular lattice vs random sampling.
 Two space–time correlation structures: separable and nonseparable models.
 Findings:
-
 Nonseparable model shows strong diagonal dominance and abrupt transitions — it better captures complex space–time interactions (e.g., pollutant diffusion, disease spread).
 Separable model has slightly lower correlation coefficients but yields more stable predictions.
 MAE increased by ~5.5% (statistically significant).
 RSE increased by ~1.4%.
 R² remained nearly unchanged.
 Even when overall correlation behavior looks similar, correct model specification is crucial for improving predictive accuracy and model stability.
-
 6. Documents
 final paper.pdf
-
-8. Experimental Scripts (Development History)
+7. Experimental Scripts (Development History)
 Includes earlier or incomplete versions used during the development process.
-
-
-Coverage rates drop under misspecification.
-Demonstrates the importance of correctly capturing space–time interaction.
