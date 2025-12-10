@@ -1,116 +1,73 @@
-# spTimer-project-reproduction
 STAT 5430 Final Project — Bayesian Spatio-Temporal Modeling Using spTimer
+
 1. Overview
-  This project reproduces and extends the core simulation study from Bakar & Sahu (2015), focusing on Bayesian spatio-temporal modeling using the spTimer R package.
+This project reproduces and extends the core simulation study from Bakar & Sahu (2015), focusing on Bayesian spatio‑temporal modeling using the spTimer R package.
 
-  The original paper compares three models:
-  
-  GP – Gaussian Process spatio-temporal model
-  
-  AR – First-order autoregressive temporal model
-  
-  GPP – Gaussian Predictive Process model (reduced-rank approximation)
-  
-  This repository includes:
-  
-  Full reproduction of the simulation study (12×12 and 55×55 spatial grids)
-  
-  Full model refitting using spTimer (GP, AR, GPP)
-  
-  Detailed performance comparisons (MAE, RMSE, R², coverage)
-  
-  Three novel extension experiments that go beyond the original paper
-  
-  This repository satisfies all requirements for the STAT 5430 Final Project:
-  
-  Written report
-  
-  Code repository with reproducibility
+Original Models Compared
+GP — Gaussian Process spatio‑temporal model
+AR — First‑order autoregressive temporal model
+GPP — Gaussian Predictive Process model (reduced‑rank approximation)
+This Repository Includes
+Full reproduction of the simulation study (12×12 and 55×55 spatial grids)
+Full model refitting using spTimer (GP, AR, GPP)
+Detailed performance comparisons (MAE, RMSE, R², coverage)
+Three computational extensions beyond the original paper
+This repository satisfies the full requirements for the STAT 5430 Final Project:
 
-  Final presentation slides
-  
-  Substantial computational components
+Written report
+Reproducible code repository
+Final presentation slides
+Substantial computational components
 
-3. Extensions Introduced in This Project
+2. Extensions Introduced in This Project
+Extension 1 — Sampling Design (Grid vs Random)
+Examines how irregular spatial sampling affects prediction accuracy compared to regular grid sampling.
+Random sampling increases variance in inter‑site distances.
+Grid sampling achieves ≈5–8% lower MAE.
+Interpretation: Better spatial coverage improves kriging‑style prediction.
+Extension 2 — Signal‑to‑Noise Ratio (SNR) Sensitivity
+Varies SNR by adjusting process variance (sig2eta) and measurement error (sig2eps).
+AR model is most sensitive to SNR, while GPP remains more stable.
+Extension 3 — Covariance Misspecification (Separable vs Nonseparable)
+Simulates data from a nonseparable Gneiting kernel but fits a separable GP model.
+Results show ≈5.5% loss in MAE and a small 1.4% increase in RSE.
 
-  In addition to reproducing the original simulation study, three computational extensions were conducted:
-  
-  Extension 1 — Sampling Design (Grid vs Random)
-  
-  We study how irregular spatial sampling affects prediction accuracy compared with regular grid sampling.
-  
-  Random sampling increases variance in inter-site distances
-  
-  Grid sampling achieves ≈5–8% lower MAE
-  
-  Interpretation: Better spatial coverage improves kriging-style prediction
-  
-  Extension 2 — Signal-to-Noise Ratio (SNR) Sensitivity
-  
-  We vary SNR by adjusting process variance (sig2eta) and measurement error (sig2eps).
-  
-  AR model is most sensitive to SNR; GPP remains stable
-  
-  Extension 3 — Covariance Misspecification (Separable vs Nonseparable)
-  
-  We simulate data from a nonseparable Gneiting kernel but fit a separable GP model.
-  
-  Results show ≈5.5% loss in MAE
-  
-  Coverage rates decline under misspecification
-  
-  Demonstrates the importance of correctly capturing space–time interaction
-  
-3. How to Run the Analysis (you should change the address off source to your address)
-   
-  1 data_simulation2 final.R
+3. How to Run the Analysis
+(Change file paths to your local environment before running.)
 
-  2 model_fitting2 final.R
-
-  3.Large-scale GPP experiment (55×55 grid)
-
-  4.covariance test2 final.R
-
-  5 grid_vs_random final.R
-
-  6 model_comparison2 final.R
-
-  7.Nonseparable Test with Robust Prediction Extraction2 final.R
-
-  8 original code from the paper and based on that I revised part of the code.R
+1.data simulation2 final
+2.model fitting2 final.R
+3.nonseparable cov3 final.R
+4.covariance test2 final.R
+5.grid vs random final.R
+6.Nonseparable Test with Robust Prediction Extraction2 final.R
+7.Nonseparable_Test_with_Robust_Prediction_Extraction2_final.R
+8.original code from paper revised.R
 
 4. Reproduction Results (Summary)
-
-  AR model performs worst across MAE/RMSE
-
-  GP achieves the best accuracy on small grids
-  
-  GPP scales to 55×55 while retaining reasonable accuracy
+Model	Performance Summary
+AR	Performs worst across MAE/RMSE
+GP	Best accuracy on smaller grids
+GPP	Scales to 55×55 while retaining reasonable accuracy
 
 5. Extension Experiment Results (Summary)
+Two spatial sampling designs: regular lattice vs random sampling.
+Two space–time correlation structures: separable and nonseparable models.
+Findings:
 
-  The study compared two spatial sampling designs and two types of space–time correlation models.
-  
-  A regular lattice provides full spatial coverage and near‑optimal spacing for Gaussian process interpolation on smooth fields.
-  
-  A random sampling plan mimics realistic monitoring situations with clustered, irregular spacing.
-  
-  The nonseparable correlation model shows strong diagonal dominance and abrupt transitions, capturing complex space–time interactions (e.g., pollutant diffusion, disease spread). The separable model yielded     slightly lower correlation coefficients but more stable predictions.
-  
-  Performance comparison showed:
-  
-  MAE increased by about 5.5% (statistically significant).
-  
-  RSE increased by about 1.4%.
-  
-  R² remained nearly unchanged.
-  
-  Overall, the results indicate that even similar overall correlation behavior can lead to different predictive accuracy, and the precise model specification substantially affects prediction reliability.
+Nonseparable model shows strong diagonal dominance and abrupt transitions — it better captures complex space–time interactions (e.g., pollutant diffusion, disease spread).
+Separable model has slightly lower correlation coefficients but yields more stable predictions.
+MAE increased by ~5.5% (statistically significant).
+RSE increased by ~1.4%.
+R² remained nearly unchanged.
+Even when overall correlation behavior looks similar, correct model specification is crucial for improving predictive accuracy and model stability.
 
 6. Documents
-   
-  final paper
+final paper.pdf
 
-7. Experimental Scripts (Development History)
-    
-  These files include the ones that I failed to achieve the successful outcome.
+8. Experimental Scripts (Development History)
+Includes earlier or incomplete versions used during the development process.
+
+
+Coverage rates drop under misspecification.
+Demonstrates the importance of correctly capturing space–time interaction.
